@@ -4,6 +4,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/inventory-microservice
     username: postgres
     password: Prami@3990
+
+  boot:
+    message: Hello from MAIN-SERVICE
+
   jpa:
     hibernate:
       ddl-auto: update
