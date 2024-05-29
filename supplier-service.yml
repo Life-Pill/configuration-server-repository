@@ -24,4 +24,4 @@ eureka:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
-message: Hello from supplier-service
+message: Hello from supplier-service now running on port 8082

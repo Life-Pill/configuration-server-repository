@@ -28,4 +28,4 @@ eureka:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
-message: Hello from main-service
+message: Hello from main-service now running on port 8083

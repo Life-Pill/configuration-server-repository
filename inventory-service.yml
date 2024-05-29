@@ -22,4 +22,4 @@ eureka:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
-message: Hello from inventory-service
+message: Hello from inventory-service now running on port 8085
