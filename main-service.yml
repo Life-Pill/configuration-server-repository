@@ -5,9 +5,6 @@ spring:
     username: postgres
     password: Prami@3990
 
-  boot:
-    message: Hello from MAIN-SERVICE
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -30,3 +27,5 @@ eureka:
     client:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
+
+message: Hello from main-service
