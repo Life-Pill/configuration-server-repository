@@ -14,7 +14,7 @@ spring:
     show-sql: true
 
   boot:
-    message: Hello from EMPLOYEE-SERVICE
+    message: "Hello from EMPLOYEE-SERVICE"
 
 server:
   port: 8086
