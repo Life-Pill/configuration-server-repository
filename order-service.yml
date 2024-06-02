@@ -13,6 +13,12 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 server:
   port: 8087
 
@@ -22,4 +28,45 @@ eureka:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
 
-message: Hello from inventory-service now running on port 8085
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+  #Actuator endpoints for Prometheus
+
+
+  tracing:
+    sampling:
+      probability: 1.0
+      #Actuator endpoints for Circuit Breaker
+  health:
+    circuitbreakers:
+      enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: health
+    endpoint:
+      health:
+        show-details: always
+
+#Circular Breaker Resilience4j Configuration
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      INVENTORY-SERVICE:
+        registerHealthIndicator: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: count_based
+
+
+message: Hello from order-service now running on port 8087
