@@ -3,7 +3,7 @@ spring:
     name: AUTHENTICATION-SERVICE
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/authentication-service
+    url: jdbc:postgresql://localhost:5432/employee-service
     username: postgres
     password: Prami@3990
 
